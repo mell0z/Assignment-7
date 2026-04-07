@@ -28,7 +28,7 @@ for (let i = 0; i < favoriteFoods.length; i++) {
 function printFoodRecommendation(foodName) {
     console.log("Have you ever tried " + foodName + "?");
     console.log("I always recommend " + foodName + " to friends.");
-    console.log("Trust me — " + foodName + " are delicious.");
+    console.log("Trust me — " + foodName + " is delicious.");
 }
 
 // 4b. Call the function at least 3 times
@@ -81,8 +81,29 @@ for (let i = 0; i < friendFavorites.length; i++) {
 }
 
 // 9. Print both arrays and compare:
-// "There are more long-named foods." OR "There are more short-named foods."
+// "There are more long food names." OR "There are more short food names."
 
+console.log("Long food names: " + longFoodNames);
+console.log("Short food names: " + shortFoodNames);
+
+if (longFoodNames.length > shortFoodNames.length) {
+    console.log("There are more long-named foods.");
+} else if (shortFoodNames.length > longFoodNames.length) {
+    console.log("There are more short-named foods.");
+} else {
+    console.log("There are the same number of long and short-named foods.");
+}
 
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
+
+let longestFoodName = "";
+let longestLength = 0;
+
+for (let i = 0; i < friendFavorites.length; i++) {
+    if (friendFavorites[i].length > longestLength) {
+        longestLength = friendFavorites[i].length;
+        longestFoodName = friendFavorites[i];
+    }
+}
+console.log("The longest food name in the list is " + longestFoodName + " with " + longestLength + " characters.");
